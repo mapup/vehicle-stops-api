@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "a6eb240e-1e67-4d33-ac9b-e5994c65561a",
+		"name": "vehicle-stop-api",
+		"description": "# Vehicle stops CRUD API Documentation\n\n## Overview\n\nThis Postman collection contains the CRUD (Create, Read, Update, Delete) operations for managing vehicle stops and meta information such as fuel rates, parking charges, etc. Each endpoint requires an API key for authentication.\n\n### Collection Details\n\n- **Collection Name**: vehicle-stop\n    \n\n## Endpoints\n\n### 1\\. Create Vehicle Stops\n\n- **Endpoint**: `POST /v1/create-vehicle-stops`\n- **Description**: Creates a new vehicle stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code  \n    `[ { \"stop\": { \"stop_id\": 3, \"stop_type\": \"fuel\", \"latitude\": 41.033959, \"longitude\": -77.515672 }, \"rates\": { \"regular_price\": 2.99, \"midgrade_price\": 3.29, \"premium_price\": 3.59, \"diesel_price\": 2.79 } } ]`\n- **Response**:\n    - **Status**: 201 Created\n    - jsonCopy code\\[ { \"stop_id\": 4 }\\]\n\n### 2\\. Get All Fuel Stops\n\n- **Endpoint**: `GET /v1/get-fuel-stops`\n- **Description**: Retrieves a list of all fuel stops.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code  \n        `[ { \"stop_id\": 98, \"name\": \"Pilot Travel Center\", \"stop_type\": \"fuel\", \"company_name\": \"MapUp Inc\", \"latitude\": \"41.033959\", \"longitude\": \"-77.515672\", \"geometry\": { \"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"EPSG:4326\" } }, \"type\": \"Point\", \"coordinates\": [ 41.033959, -77.515672 ] }, \"geohash\": \"dr2ck\", \"address\": null, \"city\": null, \"state_province\": null, \"country\": null, \"postal_code\": null, \"interstate\": null, \"phone\": null, \"fax\": null, \"total_parking_spaces\": null, \"prime_parking_spaces\": null, \"diesel_lanes\": null, \"def_lanes\": null, \"shower_count\": null, \"has_cat_scale\": null, \"amenities\": null, \"restaurants\": null, \"created_at\": \"2024-07-02T16:24:47.939Z\", \"updated_at\": \"2024-07-02T16:24:47.939Z\", \"StopPrice\": { \"price_id\": 2, \"stop_id\": 98, \"regular_price\": \"2.99\", \"midgrade_price\": \"3.29\", \"premium_price\": \"3.59\", \"diesel_price\": \"2.79\", \"last_updated\": \"2024-07-02T16:24:48.405Z\" } } ]`\n\n### 3\\. Delete a Fuel Stop\n\n- **Endpoint**: `DELETE /v1/vehicle-stop/{stop_id}`\n- **Description**: Deletes the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"message\": \"Fuel stop deleted\"}\n\n### 4\\. Update Fuel Stop or Rates\n\n- **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`\n- **Description**: Updates the details or rates of the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code{ \"stop\": { \"name\": \"Pilot Travel Center\", \"stop_type\": \"fuel\", \"latitude\": 51.033959, \"longitude\": -77.515672, \"address\": \"5868 Nittany Valley Drive\", \"city\": \"Mill Hall\", \"state_province\": \"PA\", \"country\": \"US\", \"postal_code\": \"17751\", \"interstate\": \"I-80 Exit 173\", \"phone\": \"(570) 726-7618\", \"fax\": \"(570) 726-5092\", \"total_parking_spaces\": 70, \"prime_parking_spaces\": 0, \"diesel_lanes\": 8, \"def_lanes\": 8, \"shower_count\": 5, \"has_cat_scale\": false, \"amenities\": \"Subway, Breakfast/Soup Bar, Cinnabon\", \"restaurants\": \"Subway, Breakfast/Soup Bar, Cinnabon\" }, \"rates\": { \"regular_price\": 3.99, \"midgrade_price\": 3.29, \"premium_price\": 4.59, \"diesel_price\": 2.79 }}\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"stop_id\": 4}\n\n## Authentication\n\nAll endpoints require an API key to be included in the request header:\n\n- Header Name: `x-api-key`\n- Header Value: `YOUR_API_KEY`\n    \n\nReplace `YOUR_API_KEY` with the actual API key provided for authentication.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27743219",
+		"_collection_link": "https://bold-shuttle-898587.postman.co/workspace/MapUp-Two~ac66fbec-c344-428b-9b27-92f5d37c3d34/collection/27743219-a6eb240e-1e67-4d33-ac9b-e5994c65561a?action=share&source=collection_link&creator=27743219"
+	},
+	"item": [
+		{
+			"name": "create fuel stops with rates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Dd6AAjtNnBrb9hrBLB9jqpF79JL8DfnA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"stop\": {\n            \"stop_id\": 94,\n            \"name\": \"Pilot Travel Center\",\n            \"stop_type\": \"fuel\",\n            \"latitude\": 41.033959,\n            \"longitude\": -77.515672\n        },\n        \"rates\": {\n            \"regular_price\": 2.99,\n            \"midgrade_price\": 3.29,\n            \"premium_price\": 3.59,\n            \"diesel_price\": 2.79\n        }\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://collect.tollguru.com/v1/create-vehicle-stops",
+					"protocol": "https",
+					"host": [
+						"collect",
+						"tollguru",
+						"com"
+					],
+					"path": [
+						"v1",
+						"create-vehicle-stops"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create fuel stops",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "bGhtMnBtRTnRGq24DmtD8Lfm8J6RBb7R",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"stop\": {\n            \"stop_id\": 4,\n            \"name\": \"Pilot Travel Center\",\n            \"stop_type\": \"fuel\",\n            \"latitude\": 41.033959,\n            \"longitude\": -77.515672,\n            \"address\": \"5868 Nittany Valley Drive\",\n            \"city\": \"Mill Hall\",\n            \"state_province\": \"PA\",\n            \"country\": \"US\",\n            \"postal_code\": \"17751\",\n            \"interstate\": \"I-80 Exit 173\",\n            \"phone\": \"(570) 726-7618\",\n            \"fax\": \"(570) 726-5092\",\n            \"total_parking_spaces\": 70,\n            \"prime_parking_spaces\": 0,\n            \"diesel_lanes\": 8,\n            \"def_lanes\": 8,\n            \"shower_count\": 5,\n            \"has_cat_scale\": true,\n            \"amenities\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n            \"restaurants\": \"Subway, Breakfast/Soup Bar, Cinnabon\"\n        },\n        \"rates\": {\n            \"regular_price\": 2.99,\n            \"midgrade_price\": 3.29,\n            \"premium_price\": 3.59,\n            \"diesel_price\": 2.79\n        }\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bdtb8ncqrg.execute-api.us-east-1.amazonaws.com/dev/fuel-stops",
+							"protocol": "https",
+							"host": [
+								"bdtb8ncqrg",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"fuel-stops"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 08:15:27 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "26468719-7853-4954-8315-85dc211bc093"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "aEacnENroAMEj-w="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-667e711d-279cfa436f92fbb14b673537;Parent=1fa0c740479fb040;Sampled=0;lineage=4909f74a:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 ce86679de463c6d70747326a379667da.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "c4eUXj8tRpEOjDt8wEKbmPeo6QZ8QOFqQCCLgeDiJ3z_ousOePV8Fw=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"stop_id\": 4\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get all fuel stops",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Error Message</th>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>{{response.error}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()}",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "[api-key]",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://collect.tollguru.com/v1/get-vehicle-stops",
+					"protocol": "https",
+					"host": [
+						"collect",
+						"tollguru",
+						"com"
+					],
+					"path": [
+						"v1",
+						"get-vehicle-stops"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list all the fuel stops",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "bGhtMnBtRTnRGq24DmtD8Lfm8J6RBb7R",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://bdtb8ncqrg.execute-api.us-east-1.amazonaws.com/dev/fuel-stops",
+							"protocol": "https",
+							"host": [
+								"bdtb8ncqrg",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"fuel-stops"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "781"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 08:08:20 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "5ca65bbb-bc01-49ec-9192-de89c3d97ca2"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "aEZaOGviIAMEbVA="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-667e6f74-7323c691790f301c420919a1;Parent=7acec24d243d16d5;Sampled=0;lineage=b9f4d528:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 1dd6f08fb93545a8d6cac36f521d0678.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "EfrVC3ijkoJCwaol-fv1f8k5yWt7deRs0Ia7bdk0Q2MfRJHFm4Kd8g=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"stop_id\": 3,\n        \"name\": \"Pilot Travel Center\",\n        \"stop_type\": \"fuel\",\n        \"company_name\": \"Bolt\",\n        \"latitude\": \"51.033959\",\n        \"longitude\": \"-77.515672\",\n        \"address\": \"5868 Nittany Valley Drive\",\n        \"city\": \"Mill Hall\",\n        \"state_province\": \"PA\",\n        \"country\": \"US\",\n        \"postal_code\": \"17751\",\n        \"interstate\": \"I-80 Exit 173\",\n        \"phone\": \"(570) 726-7618\",\n        \"fax\": \"(570) 726-5092\",\n        \"total_parking_spaces\": 70,\n        \"prime_parking_spaces\": 0,\n        \"diesel_lanes\": 8,\n        \"def_lanes\": 8,\n        \"shower_count\": 5,\n        \"has_cat_scale\": true,\n        \"amenities\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n        \"restaurants\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n        \"created_at\": \"2024-06-26T12:05:51.402Z\",\n        \"updated_at\": \"2024-06-26T12:05:51.402Z\",\n        \"StopPrice\": {\n            \"price_id\": 1,\n            \"stop_id\": 3,\n            \"regular_price\": \"3.99\",\n            \"midgrade_price\": \"3.29\",\n            \"premium_price\": \"3.59\",\n            \"diesel_price\": \"2.79\",\n            \"last_updated\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "delete a fuel stops",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "[api-key]",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://collect.tollguru.com/v1/fuel-stops/8",
+					"protocol": "https",
+					"host": [
+						"collect",
+						"tollguru",
+						"com"
+					],
+					"path": [
+						"v1",
+						"fuel-stops",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete a fuel stop",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "bGhtMnBtRTnRGq24DmtD8Lfm8J6RBb7R",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://bdtb8ncqrg.execute-api.us-east-1.amazonaws.com/dev/fuel-stops/3",
+							"protocol": "https",
+							"host": [
+								"bdtb8ncqrg",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"fuel-stops",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 08:15:55 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "eb3089c3-e7bd-4888-a29b-cf5b3fd39236"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "aEag9G30IAMEZPg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-667e7139-412c357579165a1a4a986f71;Parent=393d4ee78c7b9ad0;Sampled=0;lineage=f99f78dc:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 ce86679de463c6d70747326a379667da.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "6ByveAyErpl0_uWEIqp1X_0V3jQg1IjbtCPiiWbmxr_j1XMLJPd_0Q=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Fuel stop deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update fuel stop or rates",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "[api-key]",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stop\": {\n        \"stop_type\": \"fuel\",\n        \"latitude\": 51.033959,\n        \"longitude\": -77.515672\n    },\n    \"rates\": {\n        \"regular_price\": 3.99,\n        \"midgrade_price\": 3.29,\n        \"premium_price\": 4.59,\n        \"diesel_price\": 2.79\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://collect.tollguru.com/v1/update-vehicle-stop/94",
+					"protocol": "https",
+					"host": [
+						"collect",
+						"tollguru",
+						"com"
+					],
+					"path": [
+						"v1",
+						"update-vehicle-stop",
+						"94"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update a fuel stop",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "bGhtMnBtRTnRGq24DmtD8Lfm8J6RBb7R",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"stop\": {\n        \"name\": \"Pilot Travel Center\",\n        \"stop_type\": \"fuel\",\n        \"latitude\": 51.033959,\n        \"longitude\": -77.515672,\n        \"address\": \"5868 Nittany Valley Drive\",\n        \"city\": \"Mill Hall\",\n        \"state_province\": \"PA\",\n        \"country\": \"US\",\n        \"postal_code\": \"17751\",\n        \"interstate\": \"I-80 Exit 173\",\n        \"phone\": \"(570) 726-7618\",\n        \"fax\": \"(570) 726-5092\",\n        \"total_parking_spaces\": 70,\n        \"prime_parking_spaces\": 0,\n        \"diesel_lanes\": 8,\n        \"def_lanes\": 8,\n        \"shower_count\": 5,\n        \"has_cat_scale\": true,\n        \"amenities\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n        \"restaurants\": \"Subway, Breakfast/Soup Bar, Cinnabon\"\n    },\n    \"rates\": {\n        \"regular_price\": 3.99,\n        \"midgrade_price\": 3.29,\n        \"premium_price\": 4.59,\n        \"diesel_price\": 2.79\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bdtb8ncqrg.execute-api.us-east-1.amazonaws.com/dev/fuel-stops/4",
+							"protocol": "https",
+							"host": [
+								"bdtb8ncqrg",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"fuel-stops",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 08:24:55 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "bfbfcfa2-1008-428e-9413-4fbf1fc8ea5c"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "aEb1WGuOoAMEEEg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-667e7355-039e76037949470362578f39;Parent=02751974803f5cff;Sampled=0;lineage=ba1144b8:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 25b0581f55c9bc23ece1b989f01118bc.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "xIiG6k435n9xjz7AFUPp-st95OQFcr3sE6Z3WyJyck0Yp4OmLPnVQQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"stop_id\": 4\n}"
+				}
+			]
+		}
+	]
+}
