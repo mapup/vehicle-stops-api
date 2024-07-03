@@ -1,0 +1,11 @@
+[
+    {
+        "stop": {
+            "stop_id": 88,
+            "latitude": 41.033959,
+            "longitude": -77.515672,
+            "stop_type": "fuel",
+            "stop_name": "Pilot Travel Center"
+        }
+    }
+]
