@@ -1,56 +1,9 @@
-{
-    "stop": {
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                    [
-                        -73.935242,
-                        40.73061
-                    ],
-                    [
-                        -73.935242,
-                        40.73161
-                    ],
-                    [
-                        -73.934242,
-                        40.73161
-                    ],
-                    [
-                        -73.934242,
-                        40.73061
-                    ],
-                    [
-                        -73.935242,
-                        40.73061
-                    ]
-                ]
-            ]
-        },
-        "stop_name": "Updated Stop Name",
-        "stop_type": "fuel",
-        "address": "123 Updated St",
-        "city": "Updated City",
-        "state_province": "Updated State",
-        "country": "Updated Country",
-        "postal_code": "54321",
-        "stop_company_name": "Updated Stop Company",
-        "interstate": "I-85",
-        "phone": "987-654-3210",
-        "fax": "012-345-6789",
-        "total_parking_spaces": 100,
-        "prime_parking_spaces": 20,
-        "diesel_lanes": 8,
-        "def_lanes": 4,
-        "shower_count": 10,
-        "has_cat_scale": false,
-        "amenities": "WiFi, Showers, Restrooms, Parking",
-        "restaurants": "Diner, Fast Food, Cafe"
-    },
-    "metaData": {
-        "fuel_regular_price": 3.09,
-        "fuel_midgrade_price": 3.39,
-        "fuel_premium_price": 3.69,
-        "fuel_diesel_price": 2.89
+[
+    {
+        "stop": {
+            "stop_id": 88,
+            "latitude": 41.033959,
+            "longitude": -77.515672
+        }
     }
-}
+]
