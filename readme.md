@@ -9,37 +9,34 @@ This documentation covers the CRUD operations for managing vehicle stops, includ
 ### 1. Create Vehicle Stop
 
 - **Endpoint**: `POST /v1/create-vehicle-stops`
-- **Description**: Creates a new vehicle stop.
+- **Description**: Creates a new vehicle stop. The request body consists of two objects: `stop` and `metaData`.
+  - **`stop`**: Contains the details of the vehicle stop, such as location, address, and amenities.
+  - **`metaData`**: Contains the meta data of the stop, like fuel rates. This object is optional. If `metaData` is not present, only the stop is created. `metaData` can be added later using the update endpoint with the stop ID.
 - **Request Body**: [Link to request body](./api/create-vehicle-stops/requestBody.json)
 - **Response Body**: [Link to response body](./api/create-vehicle-stops/responseBody.json)
 
 ### 2. Get All Vehicle Stops
 
 - **Endpoint**: `GET /v1/get-vehicle-stops`
-- **Description**: Retrieves a list of all vehicle stops.
+- **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response.
 - **Response Body**: [Link to response body](./api/get-vehicle-stops/responseBody.json)
 
 ### 3. Delete Vehicle Stop
 
 - **Endpoint**: `DELETE /v1/delete-vehicle-stop/{stop_id}`
-- **Description**: Deletes the specified vehicle stop.
+- **Description**: Deletes the specified vehicle stop. Deleting a stop will also delete the associated meta data.
 - **Response Body**:
+  ```json
   {
-  "message": "Fuel stop deleted"
+    "message": "Fuel stop deleted"
   }
+  ```
 
 ### 4. Update Vehicle Stop
 
 - **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`
-- **Description**: Updates the details or rates of the specified vehicle stop.
-- **Request Body**: [Link to request body](./api/update-vehicle-stop/requestBody.json)
-- **Response Body**: [Link to response body](./api/update-vehicle-stop/responseBody.json)
-
-## Authentication
-
-All endpoints require an API key to be included in the request header:
-
-- Header Name: `x-api-key`
-- Header Value: `YOUR_API_KEY`
-
-Replace `YOUR_API_KEY` with the actual API key provided for authentication.
+- **Description**: Updates the details or rates of the specified vehicle stop. The request body consists of two objects: `stop` and `metaData`.
+  - **`stop`**: Contains the updated details of the vehicle stop.
+  - **`metaData`**: Contains the updated meta data of the stop, like fuel rates. Either `stop`, `metaData`, or both can be updated using this endpoint.
+- **Request Body**: [Link to request body](./api/update-vehicle-stop)
+- **Response Body**: [Link to response body](./api/update-vehicle-stop/)
