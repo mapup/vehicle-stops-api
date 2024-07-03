@@ -1,43 +1,46 @@
-# Vehicle Stops CRUD API Documentation
+# Vehicle Stop API Documentation
 
 ## Overview
 
-This API provides CRUD (Create, Read, Update, Delete) operations for managing vehicle stops and associated meta-information such as fuel rates, parking charges, and other details. Each endpoint requires an API key for authentication.
+This documentation covers the CRUD operations for managing vehicle stops, including meta information such as fuel rates and parking charges. Each endpoint requires an API key for authentication.
 
-## API Endpoints
+## Endpoints
 
-### Create a Vehicle Stop
+### 1. Create Vehicle Stop
 
-- **URL**: `/create-vehicle-stops`
-- **Method**: `POST`
-- **Headers**:
-  - `x-api-key: your_api_key`
-  - `Content-Type: application/json`
+- **Endpoint**: `POST /v1/create-vehicle-stops`
+- **Description**: Creates a new vehicle stop.
+- **Request Body**: [Link to request body](./api/create-vehicle-stop/request-body.json)
+- **Response Body**: [Link to response body](./create-vehicle-stop/response-body.json)
 
-### Get Vehicle Stops
+### 2. Get All Vehicle Stops
 
-- **URL**: `/get-vehicle-stops`
-- **Method**: `GET`
-- **Headers**:
-  - `x-api-key: your_api_key`
+- **Endpoint**: `GET /v1/get-vehicle-stops`
+- **Description**: Retrieves a list of all vehicle stops.
+- **Request Body**: [Link to request body](./api/get-vehicle-stops/request-body.json)
+- **Response Body**: [Link to response body](./get-vehicle-stops/response-body.json)
 
-### Update a Vehicle Stop
+### 3. Delete Vehicle Stop
 
-- **URL**: `/update-vehicle-stop/:stop_id`
-- **Method**: `PUT`
-- **Headers**:
-  - `x-api-key: your_api_key`
-  - `Content-Type: application/json`
+- **Endpoint**: `DELETE /v1/delete-vehicle-stop/{stop_id}`
+- **Description**: Deletes the specified vehicle stop.
+- **Response Body**:
+  {
+  "message": "Fuel stop deleted"
+  }
 
-### Delete a Vehicle Stop
+### 4. Update Vehicle Stop
 
-- **URL**: `/delete-vehicle-stop/:stop_id`
-- **Method**: `DELETE`
-- **Headers**:
-  - `x-api-key: your_api_key`
+- **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`
+- **Description**: Updates the details or rates of the specified vehicle stop.
+- **Request Body**: [Link to request body](./api/update-vehicle-stop/request-body.json)
+- **Response Body**: [Link to response body](./api/update-vehicle-stop/response-body.json)
 
 ## Authentication
 
-All endpoints require an API key for authentication. The API key must be included in the request headers:
+All endpoints require an API key to be included in the request header:
 
-- **Header**: `x-api-key: your_api_key`
+- Header Name: `x-api-key`
+- Header Value: `YOUR_API_KEY`
+
+Replace `YOUR_API_KEY` with the actual API key provided for authentication.
