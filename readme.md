@@ -68,7 +68,7 @@ The API uses standard HTTP status codes to indicate the success or failure of an
 
 ## Examples
 
-For detailed examples of how to use each endpoint, refer to the sample request and response bodies linked within each endpoint description.
+For detailed examples of how to use each endpoint, [refer to the sample request and response bodies linked within each endpoint description](./api-request-samples).
 
 ## Support
 
