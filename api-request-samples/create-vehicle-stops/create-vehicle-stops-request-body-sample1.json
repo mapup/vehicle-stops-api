@@ -1,0 +1,24 @@
+[
+    {
+        "stop": {
+            "stop_id": 88,
+            "latitude": 41.033959,
+            "longitude": -77.515672,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    51.033959,
+                    -77.515672
+                ]
+            },
+            "stop_type": "fuel",
+            "stop_name": "Pilot Travel Center"
+        },
+        "metaData": {
+            "fuel_regular_price": 2.99,
+            "fuel_midgrade_price": 3.29,
+            "fuel_premium_price": 3.59,
+            "fuel_diesel_price": 2.79
+        }
+    }
+]

@@ -1,0 +1,50 @@
+{
+    "stop": {
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        -73.935242,
+                        40.73061
+                    ],
+                    [
+                        -73.935242,
+                        40.73161
+                    ],
+                    [
+                        -73.934242,
+                        40.73161
+                    ],
+                    [
+                        -73.934242,
+                        40.73061
+                    ],
+                    [
+                        -73.935242,
+                        40.73061
+                    ]
+                ]
+            ]
+        },
+        "stop_name": "Only Stop Updated",
+        "stop_type": "fuel",
+        "address": "456 Only St",
+        "city": "Only City",
+        "state_province": "Only State",
+        "country": "Only Country",
+        "postal_code": "67890",
+        "stop_company_name": "Only Stop Company",
+        "interstate": "I-75",
+        "phone": "234-567-8901",
+        "fax": "123-456-7890",
+        "total_parking_spaces": 60,
+        "prime_parking_spaces": 12,
+        "diesel_lanes": 5,
+        "def_lanes": 3,
+        "shower_count": 9,
+        "has_cat_scale": true,
+        "amenities": "WiFi, Showers, Restrooms",
+        "restaurants": "Fast Food, Diner, Cafe"
+    }
+}
