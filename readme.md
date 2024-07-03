@@ -10,15 +10,14 @@ This documentation covers the CRUD operations for managing vehicle stops, includ
 
 - **Endpoint**: `POST /v1/create-vehicle-stops`
 - **Description**: Creates a new vehicle stop.
-- **Request Body**: [Link to request body](./api/create-vehicle-stop/request-body.json)
-- **Response Body**: [Link to response body](./create-vehicle-stop/response-body.json)
+- **Request Body**: [Link to request body](./api/create-vehicle-stops/requestBody.json)
+- **Response Body**: [Link to response body](./api/create-vehicle-stops/responseBody.json)
 
 ### 2. Get All Vehicle Stops
 
 - **Endpoint**: `GET /v1/get-vehicle-stops`
 - **Description**: Retrieves a list of all vehicle stops.
-- **Request Body**: [Link to request body](./api/get-vehicle-stops/request-body.json)
-- **Response Body**: [Link to response body](./get-vehicle-stops/response-body.json)
+- **Response Body**: [Link to response body](./api/get-vehicle-stops/responseBody.json)
 
 ### 3. Delete Vehicle Stop
 
@@ -33,8 +32,8 @@ This documentation covers the CRUD operations for managing vehicle stops, includ
 
 - **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`
 - **Description**: Updates the details or rates of the specified vehicle stop.
-- **Request Body**: [Link to request body](./api/update-vehicle-stop/request-body.json)
-- **Response Body**: [Link to response body](./api/update-vehicle-stop/response-body.json)
+- **Request Body**: [Link to request body](./api/update-vehicle-stop/requestBody.json)
+- **Response Body**: [Link to response body](./api/update-vehicle-stop/responseBody.json)
 
 ## Authentication
 
