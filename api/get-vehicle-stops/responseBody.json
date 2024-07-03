@@ -1,0 +1,37 @@
+[
+    {
+        "stop_id": 3,
+        "name": "Pilot Travel Center",
+        "stop_type": "fuel",
+        "company_name": "Bolt",
+        "latitude": "51.033959",
+        "longitude": "-77.515672",
+        "address": "5868 Nittany Valley Drive",
+        "city": "Mill Hall",
+        "state_province": "PA",
+        "country": "US",
+        "postal_code": "17751",
+        "interstate": "I-80 Exit 173",
+        "phone": "(570) 726-7618",
+        "fax": "(570) 726-5092",
+        "total_parking_spaces": 70,
+        "prime_parking_spaces": 0,
+        "diesel_lanes": 8,
+        "def_lanes": 8,
+        "shower_count": 5,
+        "has_cat_scale": true,
+        "amenities": "Subway, Breakfast/Soup Bar, Cinnabon",
+        "restaurants": "Subway, Breakfast/Soup Bar, Cinnabon",
+        "created_at": "2024-06-26T12:05:51.402Z",
+        "updated_at": "2024-06-26T12:05:51.402Z",
+        "StopPrice": {
+            "price_id": 1,
+            "stop_id": 3,
+            "regular_price": "3.99",
+            "midgrade_price": "3.29",
+            "premium_price": "3.59",
+            "diesel_price": "2.79",
+            "last_updated": null
+        }
+    }
+]
