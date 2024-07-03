@@ -1,0 +1,8 @@
+{
+    "metaData": {
+        "fuel_regular_price": 3.19,
+        "fuel_midgrade_price": 3.49,
+        "fuel_premium_price": 3.79,
+        "fuel_diesel_price": 2.99
+    }
+}
