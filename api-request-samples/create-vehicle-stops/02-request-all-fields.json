@@ -4,13 +4,6 @@
             "stop_id": 1,
             "latitude": 41.033959,
             "longitude": -77.515672,
-            // "geometry": {
-            //     "type": "Point",
-            //     "coordinates": [
-            //         51.033959,
-            //         -77.515672
-            //     ]
-            // },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
