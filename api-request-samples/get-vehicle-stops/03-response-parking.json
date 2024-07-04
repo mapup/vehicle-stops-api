@@ -22,8 +22,9 @@
         "has_cat_scale": true,
         "amenities": "WiFi, Showers, Restrooms",
         "restaurants": "Fast Food, Diner",
-        "metaData": {
-            "parking_fee": 10.00
+        "StopMetaData": {
+            "parking_fee": 10.00,
+            "currency": "USD"
         }
     }
 ]

@@ -52,7 +52,8 @@
             "restaurants": "Fast Food, Diner"
         },
         "metaData": {
-            "parking_fee": 10.00
+            "parking_fee": 10.00,
+            "currency": "USD"
         }
     }
 ]
