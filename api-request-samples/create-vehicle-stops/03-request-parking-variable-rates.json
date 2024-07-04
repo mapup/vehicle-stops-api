@@ -1,0 +1,67 @@
+[
+    {
+        "stop": {
+            "stop_id": 1,
+            "latitude": 41.033959,
+            "longitude": -77.515672,
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -73.935242,
+                            40.73061
+                        ],
+                        [
+                            -73.935242,
+                            40.73161
+                        ],
+                        [
+                            -73.934242,
+                            40.73161
+                        ],
+                        [
+                            -73.934242,
+                            40.73061
+                        ],
+                        [
+                            -73.935242,
+                            40.73061
+                        ]
+                    ]
+                ]
+            },
+            "stop_name": "Example Stop",
+            "stop_type": "parking",
+            "address": "123 Example St",
+            "city": "Example City",
+            "state_province": "Example State",
+            "country": "Example Country",
+            "postal_code": "12345",
+            "stop_company_name": "Example Stop Company",
+            "interstate": "I-95",
+            "phone": "123-456-7890",
+            "fax": "098-765-4321",
+            "total_parking_spaces": 50,
+            "prime_parking_spaces": 10,
+            "diesel_lanes": 4,
+            "def_lanes": 2,
+            "shower_count": 8,
+            "has_cat_scale": true,
+            "amenities": "WiFi, Showers, Restrooms",
+            "restaurants": "Fast Food, Diner"
+        },
+        "metaData": [
+            {
+                "valid_from": "2024-01-01T00:00:00Z",
+                "valid_to": "2024-03-31T23:59:59Z",
+                "parking_fee": 10.00
+            },
+            {
+                "valid_from": "2024-04-01T00:00:00Z",
+                "valid_to": "2024-06-30T23:59:59Z",
+                "parking_fee": 12.00
+            }
+        ]
+    }
+]

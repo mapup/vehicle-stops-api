@@ -1,0 +1,14 @@
+{
+    "metaData": [
+        {
+            "valid_from": "2024-01-01T00:00:00Z",
+            "valid_to": "2024-03-31T23:59:59Z",
+            "parking_fee": 10.00
+        },
+        {
+            "valid_from": "2024-04-01T00:00:00Z",
+            "valid_to": "2024-06-30T23:59:59Z",
+            "parking_fee": 12.00
+        }
+    ]
+}
