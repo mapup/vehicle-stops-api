@@ -32,7 +32,7 @@
                 ]
             },
             "stop_name": "Example Stop",
-            "stop_type": "fuel",
+            "stop_type": "parking",
             "address": "123 Example St",
             "city": "Example City",
             "state_province": "Example State",
@@ -51,12 +51,23 @@
             "amenities": "WiFi, Showers, Restrooms",
             "restaurants": "Fast Food, Diner"
         },
-        "metaData": {
-            "fuel_regular_price": 2.99,
-            "fuel_midgrade_price": 3.29,
-            "fuel_premium_price": 3.59,
-            "fuel_diesel_price": 2.79,
-            "currency": "USD"
-        }
+        "metaData": [
+            {
+                "valid_from_weekday": 0,
+                "valid_to_weekday": 4,
+                "valid_from_time_of_day": "10:00:00",
+                "valid_to_time_of_day": "13:00:00",
+                "parking_fee": 10.00,
+                "currency": "USD"
+            },
+            {
+                "valid_from_weekday": 5,
+                "valid_to_weekday": 6,
+                "valid_from_time_of_day": "10:00:00",
+                "valid_to_time_of_day": "13:00:00",
+                "parking_fee": 12.00,
+                "currency": "USD"
+            }
+        ]
     }
 ]

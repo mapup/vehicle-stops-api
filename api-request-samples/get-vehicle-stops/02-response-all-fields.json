@@ -60,6 +60,7 @@
             "fuel_midgrade_price": "3.29",
             "fuel_premium_price": "3.59",
             "fuel_diesel_price": "2.79",
+            "currency": "USD",
             "last_updated": "2024-07-03T14:11:45.752Z"
         }
     }

@@ -1,0 +1,44 @@
+[
+    {
+        "stop_id": 1,
+        "latitude": 41.033959,
+        "longitude": -77.515672,
+        "stop_name": "Example Stop",
+        "stop_type": "parking",
+        "address": "123 Example St",
+        "city": "Example City",
+        "state_province": "Example State",
+        "country": "Example Country",
+        "postal_code": "12345",
+        "stop_company_name": "Example Stop Company",
+        "interstate": "I-95",
+        "phone": "123-456-7890",
+        "fax": "098-765-4321",
+        "total_parking_spaces": 50,
+        "prime_parking_spaces": 10,
+        "diesel_lanes": 4,
+        "def_lanes": 2,
+        "shower_count": 8,
+        "has_cat_scale": true,
+        "amenities": "WiFi, Showers, Restrooms",
+        "restaurants": "Fast Food, Diner",
+        "StopMetaData": [
+            {
+                "valid_from_weekday": 0,
+                "valid_to_weekday": 4,
+                "valid_from_time_of_day": "10:00:00",
+                "valid_to_time_of_day": "13:00:00",
+                "parking_fee": 10.00,
+                "currency": "USD"
+            },
+            {
+                "valid_from_weekday": 5,
+                "valid_to_weekday": 6,
+                "valid_from_time_of_day": "10:00:00",
+                "valid_to_time_of_day": "13:00:00",
+                "parking_fee": 12.00,
+                "currency": "USD"
+            }
+        ]
+    }
+]

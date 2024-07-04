@@ -24,6 +24,7 @@ This documentation provides information on the CRUD operations for managing vehi
 - **Description**: Creates a new vehicle stop. The request body consists of two objects: `stop` and `metaData`.
   - **`stop`**: Contains the details of the vehicle stop, such as location, address, and amenities.
   - **`metaData`**: Contains the meta data of the stop, like fuel rates. This object is optional. If `metaData` is not present, only the stop is created. `metaData` can be added later using the update endpoint with the stop ID.
+  - **Note**: For `stop_type` parking, if an array is provided in the `metaData`, each object in the array should include the predicators `valid_from` and `valid_to`.
 - **Request Body**: [View sample request body](./api-request-samples/create-vehicle-stops)
 - **Response Body**: [View sample response body](./api-request-samples/create-vehicle-stops)
 
@@ -42,12 +43,15 @@ This documentation provides information on the CRUD operations for managing vehi
   {
     "message": "Vehicle stop deleted"
   }
+  ```
+
 ### 4. Update Vehicle Stop
 
 - **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`
 - **Description**: Updates the details or rates of the specified vehicle stop. The request body consists of two objects: `stop` and `metaData`.
   - **`stop`**: Contains the updated details of the vehicle stop.
   - **`metaData`**: Contains the updated meta data of the stop, like fuel rates. Either `stop`, `metaData`, or both can be updated using this endpoint.
+  - **Note**: For `stop_type` parking, if an array is provided in the `metaData`, each object in the array should include the predicators `valid_from` and `valid_to`.
 - **Request Body**: [View sample request body](./api-request-samples/update-vehicle-stop)
 - **Response Body**: [View sample response body](./api-request-samples/update-vehicle-stop)
 
