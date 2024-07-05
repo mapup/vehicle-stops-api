@@ -5,14 +5,16 @@
             "valid_to_weekday": 4,
             "valid_from_time_of_day": "10:00:00",
             "valid_to_time_of_day": "13:00:00",
-            "parking_fee": 10.00
+            "parking_fee": 10.00,
+            "currency": "USD"
         },
         {
             "valid_from_weekday": 5,
             "valid_to_weekday": 6,
             "valid_from_time_of_day": "10:00:00",
             "valid_to_time_of_day": "13:00:00",
-            "parking_fee": 12.00
+            "parking_fee": 12.00,
+            "currency": "USD"
         }
     ]
 }
