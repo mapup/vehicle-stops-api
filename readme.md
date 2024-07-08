@@ -21,7 +21,7 @@ This documentation provides information on the CRUD operations for managing vehi
 
 ### 1. Get All Vehicle Stops
 
-- **Endpoint**: `GET /v1/vehicle-stops?pageNumber=2&pageSize=1`
+- **Endpoint**: `GET /v1/vehicle-stops?pageNumber=2&pageSize=10`
 - **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response. Pagination is supported through query parameters.
 - **Query Parameters**:
   - `pageNumber` (optional): Specifies the page number to retrieve. Default is 1.
