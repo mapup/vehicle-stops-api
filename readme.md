@@ -43,7 +43,7 @@ This documentation provides information on the CRUD operations for managing vehi
 
 ### 2. Get Vehicle Stop
 
-- **Endpoint**: `GET /v1/vehicle-stop`
+- **Endpoint**: `GET /v1/vehicle-stop/{stop_id}`
 - **Description**: Retrieves a specific vehicle stop by its ID. The response includes details of the stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response.
 - **Response Body**: [View sample response body](./api-request-samples/get-vehicle-stop)
 
