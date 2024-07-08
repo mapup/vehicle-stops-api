@@ -26,12 +26,10 @@ This documentation provides information on the CRUD operations for managing vehi
 - **Query Parameters**:
   - `pageNumber` (optional): Specifies the page number to retrieve. Default is 1.
   - `pageSize` (optional): Specifies the number of items per page. Default is 10.
-- **Response Body**:
+- **Pagination Info**:
+  The response will contain the following pagination information:
   ```json
   {
-    "stops": [
-      // array of vehicle stops
-    ],
     "paginationInfo": {
       "totalItems": 1,
       "totalPages": 1,
@@ -40,6 +38,7 @@ This documentation provides information on the CRUD operations for managing vehi
     }
   }
   ```
+
 - **Sample Response**: [View sample response body](./api-request-samples/get-vehicle-stops)
 
 ### 2. Get Vehicle Stop
