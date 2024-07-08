@@ -7,10 +7,11 @@ This documentation provides information on the CRUD operations for managing vehi
 ## Table of Contents
 
 - [Endpoints](#endpoints)
-  - [Create Vehicle Stop](#1-create-vehicle-stop)
-  - [Get All Vehicle Stops](#2-get-all-vehicle-stops)
-  - [Delete Vehicle Stop](#3-delete-vehicle-stop)
+  - [Get All Vehicle Stops](#1-get-all-vehicle-stops)
+  - [Get Vehicle Stop](#2-get-vehicle-stop)
+  - [Create Vehicle Stop](#3-create-vehicle-stop)
   - [Update Vehicle Stop](#4-update-vehicle-stop)
+  - [Delete Vehicle Stop](#5-delete-vehicle-stop)
 - [Authentication](#authentication)
 - [Error Handling](#error-handling)
 - [Examples](#examples)
@@ -18,9 +19,37 @@ This documentation provides information on the CRUD operations for managing vehi
 
 ## Endpoints
 
-### 1. Create Vehicle Stop
+### 1. Get All Vehicle Stops
 
-- **Endpoint**: `POST /v1/create-vehicle-stops`
+- **Endpoint**: `GET /v1/vehicle-stops`
+- **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response. Pagination is supported through query parameters.
+- **Query Parameters**:
+  - `pageNumber` (optional): Specifies the page number to retrieve. Default is 1.
+  - `pageSize` (optional): Specifies the number of items per page. Default is 10.
+- **Pagination Info**:
+  The response will contain the following pagination information:
+  ```json
+  {
+    "paginationInfo": {
+      "totalItems": 1,
+      "totalPages": 1,
+      "currentPage": 1,
+      "pageSize": 10
+    }
+  }
+  ```
+
+- **Sample Response**: [View sample response body](./api-request-samples/get-vehicle-stops)
+
+### 2. Get Vehicle Stop
+
+- **Endpoint**: `GET /v1/vehicle-stop/{stop_id}`
+- **Description**: Retrieves a specific vehicle stop by its ID. The response includes details of the stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response.
+- **Response Body**: [View sample response body](./api-request-samples/get-vehicle-stop)
+
+### 3. Create Vehicle Stop
+
+- **Endpoint**: `POST /v1/vehicle-stops`
 - **Description**: Creates a new vehicle stop. The request body consists of two objects: `stop` and `metaData`.
   - **`stop`**: Contains the details of the vehicle stop, such as location, address, and amenities.
   - **`metaData`**: Contains the meta data of the stop, like fuel rates. This object is optional. If `metaData` is not present, only the stop is created. `metaData` can be added later using the update endpoint with the stop ID.
@@ -28,15 +57,19 @@ This documentation provides information on the CRUD operations for managing vehi
 - **Request Body**: [View sample request body](./api-request-samples/create-vehicle-stops)
 - **Response Body**: [View sample response body](./api-request-samples/create-vehicle-stops)
 
-### 2. Get All Vehicle Stops
+### 4. Update Vehicle Stop
 
-- **Endpoint**: `GET /v1/get-vehicle-stops`
-- **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response.
-- **Response Body**: [View sample response body](./api-request-samples/get-vehicle-stops)
+- **Endpoint**: `PUT /v1/vehicle-stop/{stop_id}`
+- **Description**: Updates the details or rates of the specified vehicle stop. The request body consists of two objects: `stop` and `metaData`.
+  - **`stop`**: Contains the updated details of the vehicle stop.
+  - **`metaData`**: Contains the updated meta data of the stop, like fuel rates. Either `stop`, `metaData`, or both can be updated using this endpoint.
+  - **Note**: For `stop_type` parking, if an array is provided in the `metaData`, each object in the array should include the predicators `valid_from` and `valid_to`.
+- **Request Body**: [View sample request body](./api-request-samples/update-vehicle-stop)
+- **Response Body**: [View sample response body](./api-request-samples/update-vehicle-stop)
 
-### 3. Delete Vehicle Stop
+### 5. Delete Vehicle Stop
 
-- **Endpoint**: `DELETE /v1/delete-vehicle-stop/{stop_id}`
+- **Endpoint**: `DELETE /v1/vehicle-stop/{stop_id}`
 - **Description**: Deletes the specified vehicle stop. Deleting a stop will also delete the associated meta data.
 - **Response Body**:
   ```json
@@ -44,16 +77,6 @@ This documentation provides information on the CRUD operations for managing vehi
     "message": "Vehicle stop deleted"
   }
   ```
-
-### 4. Update Vehicle Stop
-
-- **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`
-- **Description**: Updates the details or rates of the specified vehicle stop. The request body consists of two objects: `stop` and `metaData`.
-  - **`stop`**: Contains the updated details of the vehicle stop.
-  - **`metaData`**: Contains the updated meta data of the stop, like fuel rates. Either `stop`, `metaData`, or both can be updated using this endpoint.
-  - **Note**: For `stop_type` parking, if an array is provided in the `metaData`, each object in the array should include the predicators `valid_from` and `valid_to`.
-- **Request Body**: [View sample request body](./api-request-samples/update-vehicle-stop)
-- **Response Body**: [View sample response body](./api-request-samples/update-vehicle-stop)
 
 ## Authentication
 

@@ -1,0 +1,20 @@
+{
+    "stop_id": 79,
+    "latitude": "51.033959",
+    "longitude": "-77.515672",
+    "geometry": {
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        },
+        "type": "Point",
+        "coordinates": [
+            51.033959,
+            -77.515672
+        ]
+    },
+    "stop_name": "Pilot Travel Center",
+    "stop_type": "fuel"
+}

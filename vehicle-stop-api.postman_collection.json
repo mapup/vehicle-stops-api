@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "8978060d-f5f3-402f-ace7-9f1f6dc17d91",
+		"_postman_id": "427542cf-2cd1-429a-a402-43ffd513df55",
 		"name": "vehicle-stop-api",
-		"description": "# Vehicle stops CRUD API Documentation\n\n## Overview\n\nThis Postman collection contains the CRUD (Create, Read, Update, Delete) operations for managing vehicle stops and meta information such as fuel rates, parking charges, etc. Each endpoint requires an API key for authentication.\n\n### Collection Details\n\n- **Collection Name**: vehicle-stop\n    \n\n## Endpoints\n\n### 1\\. Create Vehicle Stops\n\n- **Endpoint**: `POST /v1/create-vehicle-stops`\n- **Description**: Creates a new vehicle stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code  \n    `[ { \"stop\": { \"stop_id\": 88, \"latitude\": 41.033959, \"longitude\": -77.515672, \"geometry\": { \"type\": \"Point\", \"coordinates\": [ 51.033959, -77.515672 ] }, \"stop_type\": \"fuel\", \"stop_name\": \"Pilot Travel Center\" }, \"metaData\": { \"fuel_regular_price\": 2.99, \"fuel_midgrade_price\": 3.29, \"fuel_premium_price\": 3.59, \"fuel_diesel_price\": 2.79 } } ]`\n- **Response**:\n    - **Status**: 201 Created\n    - jsonCopy code\\[ { \"stop_id\": 4 }\\]\n\n### 2\\. Get All Vehicle Stops\n\n- **Endpoint**: `GET /v1/get-fuel-stops`\n- **Description**: Retrieves a list of all fuel stops.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code  \n        `[ { \"stop\": { \"stop_id\": 88, \"latitude\": 41.033959, \"longitude\": -77.515672, \"geometry\": { \"type\": \"Point\", \"coordinates\": [ 51.033959, -77.515672 ] }, \"stop_type\": \"fuel\", \"stop_name\": \"Pilot Travel Center\" }, \"metaData\": { \"fuel_regular_price\": 2.99, \"fuel_midgrade_price\": 3.29, \"fuel_premium_price\": 3.59, \"fuel_diesel_price\": 2.79 } } ]`\n\n### 3\\. Delete a Vehicle Stop\n\n- **Endpoint**: `DELETE /v1/delete-vehicle-stop/{stop_id}`\n- **Description**: Deletes the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"message\": \"Fuel stop deleted\"}\n\n### 4\\. Update Vehicle Stop or Rates\n\n- **Endpoint**: `PUT /v1/update-vehicle-stop/{stop_id}`\n- **Description**: Updates the details or rates of the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code  \n    `[ { \"stop\": { \"latitude\": 41.033959, \"longitude\": -77.515672, \"geometry\": { \"type\": \"Point\", \"coordinates\": [ 51.033959, -77.515672 ] }, \"stop_type\": \"fuel\", \"stop_name\": \"Pilot Travel Center\" }, \"metaData\": { \"fuel_regular_price\": 2.99, \"fuel_midgrade_price\": 3.29, \"fuel_premium_price\": 3.59, \"fuel_diesel_price\": 2.79 } } ]`\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"stop_id\": 4}\n\n## Authentication\n\nAll endpoints require an API key to be included in the request header:\n\n- Header Name: `x-api-key`\n- Header Value: `YOUR_API_KEY`\n    \n\nReplace `YOUR_API_KEY` with the actual API key provided for authentication.",
+		"description": "# Vehicle stops CRUD API Documentation\n\n## Overview\n\nThis Postman collection contains the CRUD (Create, Read, Update, Delete) operations for managing vehicle stops and meta information such as fuel rates, parking charges, etc. Each endpoint requires an API key for authentication.\n\n### Collection Details\n\n- **Collection Name**: vehicle-stop\n    \n\n## Endpoints\n\n### 1\\. Get All Vehicle Stops\n\n- **Endpoint**: `GET /v1/vehicle-stops`\n- **Description**: Retrieves a list of all fuel stops.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code  \n        `{ \"data\": [ { \"stop_id\": 89, \"latitude\": \"41.033959\", \"longitude\": \"-77.515672\", \"geometry\": { \"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"EPSG:4326\" } }, \"type\": \"Polygon\", \"coordinates\": [ [ [ -73.935242, 40.73061 ], [ -73.935242, 40.73161 ], [ -73.934242, 40.73161 ], [ -73.934242, 40.73061 ], [ -73.935242, 40.73061 ] ] ] }, \"stop_name\": \"Example Stop\", \"stop_type\": \"fuel\", \"address\": \"123 Example St\", \"city\": \"Example City\", \"state_province\": \"Example State\", \"country\": \"Example Country\", \"postal_code\": \"12345\", \"stop_company_name\": \"Example Stop Company\", \"interstate\": \"I-95\", \"phone\": \"123-456-7890\", \"fax\": \"098-765-4321\", \"total_parking_spaces\": 50, \"prime_parking_spaces\": 10, \"diesel_lanes\": 4, \"def_lanes\": 2, \"shower_count\": 8, \"has_cat_scale\": true, \"amenities\": \"WiFi, Showers, Restrooms\", \"restaurants\": \"Fast Food, Diner\", \"metaData\": { \"stop_id\": 89, \"fuel_regular_price\": \"2.99\", \"fuel_midgrade_price\": \"3.29\", \"fuel_premium_price\": \"3.59\", \"fuel_diesel_price\": \"2.79\", \"currency\": \"USD\", \"last_updated\": \"2024-07-08T15:20:13.546Z\" } } ], \"paginationInfo\": { \"totalItems\": 1, \"totalPages\": 1, \"currentPage\": 1, \"pageSize\": 10 } }`\n\n### 2\\. Get Vehicle Stop\n\n- **Endpoint**: `GET /v1/vehicle-stop`\n- **Description**: Retrieves a list of all fuel stops.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code  \n        `{ \"stop_id\": 1, \"geometry\": { \"crs\": { \"type\": \"name\", \"properties\": { \"name\": \"EPSG:4326\" } }, \"type\": \"Polygon\", \"coordinates\": [ [ [ -73.935242, 40.73061 ], [ -73.935242, 40.73161 ], [ -73.934242, 40.73161 ], [ -73.934242, 40.73061 ], [ -73.935242, 40.73061 ] ] ] }, \"stop_name\": \"Example Stop\", \"stop_type\": \"fuel\", \"address\": \"123 Example St\", \"city\": \"Example City\", \"state_province\": \"Example State\", \"country\": \"Example Country\", \"postal_code\": \"12345\", \"stop_company_name\": \"Example Stop Company\", \"interstate\": \"I-95\", \"phone\": \"123-456-7890\", \"fax\": \"098-765-4321\", \"total_parking_spaces\": 50, \"prime_parking_spaces\": 10, \"diesel_lanes\": 4, \"def_lanes\": 2, \"shower_count\": 8, \"has_cat_scale\": true, \"amenities\": \"WiFi, Showers, Restrooms\", \"restaurants\": \"Fast Food, Diner\", \"metaData\": { \"id\": 3, \"stop_id\": 1, \"fuel_regular_price\": \"2.99\", \"fuel_midgrade_price\": \"3.29\", \"fuel_premium_price\": \"3.59\", \"fuel_diesel_price\": \"2.79\", \"currency\": \"USD\", \"last_updated\": \"2024-07-03T14:11:45.752Z\" } }`\n\n### 3\\. Create Vehicle Stops\n\n- **Endpoint**: `POST /v1/vehicle-stops`\n- **Description**: Creates a new vehicle stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code  \n    `[ { \"stop\": { \"stop_id\": 88, \"latitude\": 41.033959, \"longitude\": -77.515672, \"geometry\": { \"type\": \"Point\", \"coordinates\": [ 51.033959, -77.515672 ] }, \"stop_type\": \"fuel\", \"stop_name\": \"Pilot Travel Center\" }, \"metaData\": { \"fuel_regular_price\": 2.99, \"fuel_midgrade_price\": 3.29, \"fuel_premium_price\": 3.59, \"fuel_diesel_price\": 2.79 } } ]`\n- **Response**:\n    - **Status**: 201 Created\n    - jsonCopy code\\[ { \"stop_id\": 4 }\\]\n\n### 4\\. Update Vehicle Stop or Rates\n\n- **Endpoint**: `PUT /v1/vehicle-stop/{stop_id}`\n- **Description**: Updates the details or rates of the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- jsonCopy code  \n    `[ { \"stop\": { \"latitude\": 41.033959, \"longitude\": -77.515672, \"geometry\": { \"type\": \"Point\", \"coordinates\": [ 51.033959, -77.515672 ] }, \"stop_type\": \"fuel\", \"stop_name\": \"Pilot Travel Center\" }, \"metaData\": { \"fuel_regular_price\": 2.99, \"fuel_midgrade_price\": 3.29, \"fuel_premium_price\": 3.59, \"fuel_diesel_price\": 2.79 } } ]`\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"stop_id\": 4}\n\n### 5\\. Delete a Vehicle Stop\n\n- **Endpoint**: `DELETE /v1/vehicle-stop/{stop_id}`\n- **Description**: Deletes the specified fuel stop.\n- **Request Headers**:\n    - `x-api-key`: API key for authentication.\n- **Response**:\n    - **Status**: 200 OK\n    - jsonCopy code{ \"message\": \"Fuel stop deleted\"}\n\n## Authentication\n\nAll endpoints require an API key to be included in the request header:\n\n- Header Name: `x-api-key`\n- Header Value: `YOUR_API_KEY`\n    \n\nReplace `YOUR_API_KEY` with the actual API key provided for authentication.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27743219",
-		"_collection_link": "https://bold-shuttle-898587.postman.co/workspace/MapUp-Two~ac66fbec-c344-428b-9b27-92f5d37c3d34/collection/27743219-8978060d-f5f3-402f-ace7-9f1f6dc17d91?action=share&source=collection_link&creator=27743219"
+		"_collection_link": "https://bold-shuttle-898587.postman.co/workspace/MapUp-Two~ac66fbec-c344-428b-9b27-92f5d37c3d34/collection/27743219-427542cf-2cd1-429a-a402-43ffd513df55?action=share&source=collection_link&creator=27743219"
 	},
 	"item": [
 		{
@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n    {\n        \"stop\": {\n            \"stop_id\": 88,\n            \"latitude\": 41.033959,\n            \"longitude\": -77.515672,\n            \"geometry\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    51.033959,\n                    -77.515672\n                ]\n            },\n            \"stop_type\": \"fuel\",\n            \"stop_name\": \"Pilot Travel Center\"\n        },\n        \"metaData\": {\n            \"fuel_regular_price\": 2.99,\n            \"fuel_midgrade_price\": 3.29,\n            \"fuel_premium_price\": 3.59,\n            \"fuel_diesel_price\": 2.79\n        }\n    }\n]",
+					"raw": "[\n    {\n        \"stop\": {\n            \"stop_id\": 89,\n            \"latitude\": 41.033959,\n            \"longitude\": -77.515672,\n            \"geometry\": {\n                \"type\": \"Polygon\",\n                \"coordinates\": [\n                    [\n                        [\n                            -73.935242,\n                            40.73061\n                        ],\n                        [\n                            -73.935242,\n                            40.73161\n                        ],\n                        [\n                            -73.934242,\n                            40.73161\n                        ],\n                        [\n                            -73.934242,\n                            40.73061\n                        ],\n                        [\n                            -73.935242,\n                            40.73061\n                        ]\n                    ]\n                ]\n            },\n            \"stop_name\": \"Example Stop\",\n            \"stop_type\": \"fuel\",\n            \"address\": \"123 Example St\",\n            \"city\": \"Example City\",\n            \"state_province\": \"Example State\",\n            \"country\": \"Example Country\",\n            \"postal_code\": \"12345\",\n            \"stop_company_name\": \"Example Stop Company\",\n            \"interstate\": \"I-95\",\n            \"phone\": \"123-456-7890\",\n            \"fax\": \"098-765-4321\",\n            \"total_parking_spaces\": 50,\n            \"prime_parking_spaces\": 10,\n            \"diesel_lanes\": 4,\n            \"def_lanes\": 2,\n            \"shower_count\": 8,\n            \"has_cat_scale\": true,\n            \"amenities\": \"WiFi, Showers, Restrooms\",\n            \"restaurants\": \"Fast Food, Diner\"\n        },\n        \"metaData\": {\n            \"fuel_regular_price\": 2.99,\n            \"fuel_midgrade_price\": 3.29,\n            \"fuel_premium_price\": 3.59,\n            \"fuel_diesel_price\": 2.79,\n            \"currency\": \"USD\"\n        }\n    }\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,16 +29,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://collect.tollguru.com/v1/create-vehicle-stops",
-					"protocol": "https",
+					"raw": "{{base_url}}/vehicle-stops",
 					"host": [
-						"collect",
-						"tollguru",
-						"com"
+						"{{base_url}}"
 					],
 					"path": [
-						"v1",
-						"create-vehicle-stops"
+						"vehicle-stops"
 					]
 				}
 			},
@@ -180,16 +176,163 @@
 					}
 				],
 				"url": {
-					"raw": "https://collect.tollguru.com/v1/get-vehicle-stops",
-					"protocol": "https",
+					"raw": "{{base_url}}/vehicle-stops",
 					"host": [
-						"collect",
-						"tollguru",
-						"com"
+						"{{base_url}}"
 					],
 					"path": [
-						"v1",
-						"get-vehicle-stops"
+						"vehicle-stops"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "pageSize",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list all the fuel stops",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "bGhtMnBtRTnRGq24DmtD8Lfm8J6RBb7R",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://bdtb8ncqrg.execute-api.us-east-1.amazonaws.com/dev/fuel-stops",
+							"protocol": "https",
+							"host": [
+								"bdtb8ncqrg",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"fuel-stops"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "781"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jun 2024 08:08:20 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "5ca65bbb-bc01-49ec-9192-de89c3d97ca2"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "aEZaOGviIAMEbVA="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-667e6f74-7323c691790f301c420919a1;Parent=7acec24d243d16d5;Sampled=0;lineage=b9f4d528:0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 1dd6f08fb93545a8d6cac36f521d0678.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BOM78-P3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "EfrVC3ijkoJCwaol-fv1f8k5yWt7deRs0Ia7bdk0Q2MfRJHFm4Kd8g=="
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"stop_id\": 3,\n        \"name\": \"Pilot Travel Center\",\n        \"stop_type\": \"fuel\",\n        \"company_name\": \"Bolt\",\n        \"latitude\": \"51.033959\",\n        \"longitude\": \"-77.515672\",\n        \"address\": \"5868 Nittany Valley Drive\",\n        \"city\": \"Mill Hall\",\n        \"state_province\": \"PA\",\n        \"country\": \"US\",\n        \"postal_code\": \"17751\",\n        \"interstate\": \"I-80 Exit 173\",\n        \"phone\": \"(570) 726-7618\",\n        \"fax\": \"(570) 726-5092\",\n        \"total_parking_spaces\": 70,\n        \"prime_parking_spaces\": 0,\n        \"diesel_lanes\": 8,\n        \"def_lanes\": 8,\n        \"shower_count\": 5,\n        \"has_cat_scale\": true,\n        \"amenities\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n        \"restaurants\": \"Subway, Breakfast/Soup Bar, Cinnabon\",\n        \"created_at\": \"2024-06-26T12:05:51.402Z\",\n        \"updated_at\": \"2024-06-26T12:05:51.402Z\",\n        \"StopPrice\": {\n            \"price_id\": 1,\n            \"stop_id\": 3,\n            \"regular_price\": \"3.99\",\n            \"midgrade_price\": \"3.29\",\n            \"premium_price\": \"3.59\",\n            \"diesel_price\": \"2.79\",\n            \"last_updated\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get vehicle stop",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Error Message</th>",
+							"    </tr>",
+							"    <tr>",
+							"        <td>{{response.error}}</td>",
+							"    </tr>",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()}",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "[api-key]",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/vehicle-stop/89",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"vehicle-stop",
+						"89"
 					]
 				}
 			},
@@ -287,17 +430,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://collect.tollguru.com/v1/delete-vehicle-stop/88",
-					"protocol": "https",
+					"raw": "{{base_url}}/vehicle-stop/89",
 					"host": [
-						"collect",
-						"tollguru",
-						"com"
+						"{{base_url}}"
 					],
 					"path": [
-						"v1",
-						"delete-vehicle-stop",
-						"88"
+						"vehicle-stop",
+						"89"
 					]
 				}
 			},
@@ -397,7 +536,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"stop\": {\n        \"stop_type\": \"fuel\",\n        \"latitude\": 51.033959,\n        \"longitude\": -77.515672\n    },\n    \"metaData\": {\n        \"fuel_regular_price\": 13.99,\n        \"midgrade_price\": 3.29,\n        \"premium_price\": 4.59,\n        \"diesel_price\": 2.79\n    }\n}",
+					"raw": "{\n    \"stop\": {\n        \"stop_type\": \"fuel\",\n        \"latitude\": 51.033959,\n        \"longitude\": -97.515672\n    },\n    \"metaData\": {\n        \"fuel_regular_price\": 13.99,\n        \"fuel_midgrade_price\": 3.29,\n        \"fuel_premium_price\": 4.59,\n        \"fuel_diesel_price\": 2.79\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -405,17 +544,13 @@
 					}
 				},
 				"url": {
-					"raw": "https://collect.tollguru.com/v1/update-vehicle-stop/88",
-					"protocol": "https",
+					"raw": "{{base_url}}/vehicle-stop/5",
 					"host": [
-						"collect",
-						"tollguru",
-						"com"
+						"{{base_url}}"
 					],
 					"path": [
-						"v1",
-						"update-vehicle-stop",
-						"88"
+						"vehicle-stop",
+						"5"
 					]
 				}
 			},
