@@ -1,9 +1,6 @@
-[
-    {
-        "stop": {
-            "stop_id": 88,
-            "latitude": 41.033959,
-            "longitude": -77.515672
-        }
+{
+    "stop": {
+        "latitude": 41.033959,
+        "longitude": -77.515672
     }
-]
+}
