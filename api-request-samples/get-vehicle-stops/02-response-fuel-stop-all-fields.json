@@ -56,6 +56,9 @@
             "has_cat_scale": true,
             "amenities": "WiFi, Showers, Restrooms",
             "restaurants": "Fast Food, Diner",
+            "risk_score": "7.5",
+            "risk_level": "medium",
+            "stop_rank": "3.0",
             "metaData": {
                 "stop_id": 89,
                 "fuel_regular_price": "2.99",

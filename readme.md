@@ -22,7 +22,7 @@ This documentation provides information on the CRUD operations for managing vehi
 ### 1. Get All Vehicle Stops
 
 - **Endpoint**: `GET /v1/vehicle-stops?pageNumber=2&pageSize=10`
-- **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response. Pagination is supported through query parameters.
+- **Description**: Retrieves a list of all vehicle stops. The response includes details of each stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response. Pagination is supported through query parameters. Each stop includes `risk_score`, `risk_level`, and `stop_rank` fields when present.
 - **Query Parameters**:
   - `pageNumber` (optional): Specifies the page number to retrieve. Default is 1.
   - `pageSize` (optional): Specifies the number of items per page. Default is 10.
@@ -44,7 +44,7 @@ This documentation provides information on the CRUD operations for managing vehi
 ### 2. Get Vehicle Stop
 
 - **Endpoint**: `GET /v1/vehicle-stop/{stop_id}`
-- **Description**: Retrieves a specific vehicle stop by its ID. The response includes details of the stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response.
+- **Description**: Retrieves a specific vehicle stop by its ID. The response includes details of the stop along with their associated `metaData` if available. If `metaData` is not present, it is not shown in the response. The response includes `risk_score`, `risk_level`, and `stop_rank` fields when present.
 - **Response Body**: [View sample response body](./api-request-samples/get-vehicle-stop)
 
 ### 3. Create Vehicle Stop
@@ -54,6 +54,10 @@ This documentation provides information on the CRUD operations for managing vehi
   - **`stop`**: Contains the details of the vehicle stop, such as location, address, and amenities.
   - **`metaData`**: Contains the meta data of the stop, like fuel rates. This object is optional. If `metaData` is not present, only the stop is created. `metaData` can be added later using the update endpoint with the stop ID.
   - **Note**: For `stop_type` parking, if an array is provided in the `metaData`, each object in the array should include the predicators `valid_from` and `valid_to`.
+- **Risk & Rank Fields** (all optional, nullable):
+  - `risk_score` (`number`, 1 decimal place): Numerical risk score for the stop (e.g. `7.5`).
+  - `risk_level` (`string`, max 50 chars): Human-readable risk level (e.g. `"low"`, `"medium"`, `"high"`).
+  - `stop_rank` (`number`, 1 decimal place): Rank of the stop (e.g. `3.0`).
 - **Request Body**: [View sample request body](./api-request-samples/create-vehicle-stops)
 - **Response Body**: [View sample response body](./api-request-samples/create-vehicle-stops)
 
