@@ -45,7 +45,10 @@
         "shower_count": 10,
         "has_cat_scale": false,
         "amenities": "WiFi, Showers, Restrooms, Parking",
-        "restaurants": "Diner, Fast Food, Cafe"
+        "restaurants": "Diner, Fast Food, Cafe",
+        "risk_score": 6.0,
+        "risk_level": "low",
+        "stop_rank": 2.0
     },
     "metaData": {
         "fuel_regular_price": 3.09,
